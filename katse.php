@@ -37,17 +37,13 @@ echo '
         </head>
         <body>';
 if($naitaSisu == true) {
-    // sisu väljastamine
-    echo '  <h1>' . $sisuPealkiri . '</h1>
-            <h3>Andmetüübid</h3>
-            ';
+    echo '  <h1>' . $sisuPealkiri . '</h1>';
+} else if( $naitaSisu == 1){
+    echo 'see on tavaline info';
+} else if($naitaSisu == 0){
+    echo 'see on tavaline peidetud info';
 } else {
-    if ($naitaPeidetudInfo == true) {
-        echo 'Sisu on peidetud';
-    } else {
-        echo 'Kõik on saladus!';
-    }
-
+    echo 'kõik on saladus';
 }
 // html lehe lõpp
 echo '
