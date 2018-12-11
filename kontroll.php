@@ -5,19 +5,15 @@
  * Date: 11.12.2018
  * Time: 9:22
  */
-// Ülesanne 1
-/* Loo programm, mille sees:
-a) defineeritud muutujate abil
-    Sinu ees- ja perenimi
-    kursuse tähis
-    kursuse number
-    Sinu kooli email
-b) Väljastatud muutujate väärtused koos sobiva tekstiga html faili kujul
+
+// Ülesanne 2
+/* Loo muutuja nimega varv, mille algväärtuseks pane 'punane';
+Koosta if-else if- else lause, mis väljastab teksti "Värviline tekst"
+vastavalt määratud väärtusega. Katseta vähemalt kolme HTML värviga -
+red, blue, orange
 */
-$nimi = 'Katrin Sooäär';
-$kursuseTahis = 'KD';
-$kursuseNumber = 18;
-$kooliEmail = 'katrinsooaar@khk.ee';
+
+$varv = 'red';
 
 echo '
     <!doctype html>
@@ -25,15 +21,21 @@ echo '
         <head>
             <title>Lahendused</title>
         </head>
-        <body>
-            <h1>Minu info</h1>
-                <ul>
-                <li>Nimi: '.$nimi.'</li>
-                <li>Kursus: '.$kursuseTahis.''.$kursuseNumber.'</li>
-                <li>Email: '.$kooliEmail.'</li>
-                </ul>
+        <body>';
+if($varv == 'red') {
+    echo '  <h4 style="color:red;">Värviline tekst</h4>';
+} else if( $varv == 'blue'){
+    echo '  <h4 style="color:blue;">Värviline tekst</h4>';
+} else if( $varv == 'orange'){
+    echo '  <h4 style="color:orange;">Värviline tekst</h4>';
+} else {
+    echo 'Värv ei ole määratud';
+}
+// html lehe lõpp
+echo '
         </body>
-    
     </html>
 ';
+
+
 ?>
