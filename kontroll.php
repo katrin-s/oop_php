@@ -10,28 +10,21 @@
 /* Loo muutuja nimega varv, mille algväärtuseks pane 'punane';
 Koosta if-else if- else lause, mis väljastab teksti "Värviline tekst"
 vastavalt määratud väärtusega. Katseta vähemalt kolme HTML värviga -
-red, blue, orange
+red, blue, orange - vastavalt tingimuslauses määra punane, sinine ja orange
 */
-
-$varv = 'red';
-
-echo '
-    <!doctype html>
-    <html>
-        <head>
-            <title>Lahendused</title>
-        </head>
-        <body>';
-if($varv == 'red') {
-    echo '  <h4 style="color:red;">Värviline tekst</h4>';
-} else if( $varv == 'blue'){
-    echo '  <h4 style="color:blue;">Värviline tekst</h4>';
-} else if( $varv == 'orange'){
-    echo '  <h4 style="color:orange;">Värviline tekst</h4>';
+echo '<h4>Ülesanne 2</h4>';
+$varv = 'orange';
+echo '<p style="color: ';
+if($varv == 'punane'){
+    echo 'red';
+} else if($varv == 'sinine'){
+    echo 'blue';
+} else if($varv == 'orange'){
+    echo 'orange';
 } else {
-    echo 'Värv ei ole määratud';
+    echo 'black';
 }
-// html lehe lõpp
+echo ';">Värviline tekst</p>';
 echo '
         </body>
     </html>
