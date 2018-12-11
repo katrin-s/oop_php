@@ -6,7 +6,8 @@
  * Time: 9:22
  */
 
-echo '<html><head><title>Ülesanded</title></head><body>';
+echo '<html><head><title>Ülesanded</title>
+<link rel="stylesheet" type="text/css" href="katsestyle.css"></head><body>';
 // Ülesanne 1
 /* Loo programm, mille sees:
 a) defineeritud muutujate abil
@@ -44,4 +45,23 @@ if($varv == 'punane'){
     echo 'black';
 }
 echo ';">Värviline tekst</p>';
+echo '<hr>';
+// Ülesanne 3
+// loo tabelile gradient programmeerimise abil
+echo '<h4>Ülesanne 3</h4>';
+echo '<table>';
+$ridadeArv = 8;
+$veergudeArv = 5;
+for($reaNumber = 1; $reaNumber <= $ridadeArv; $reaNumber++){
+    echo '<tr>';
+    for ($veeruNumber = 1; $veeruNumber <= $veergudeArv; $veeruNumber++) {
+        $varv = '#'.$ridadeArv.$veeruNumber.$veergudeArv.$veeruNumber.$reaNumber.$veeruNumber;
+        echo '<td style="background-color: '.$varv.'">';
+        echo $veeruNumber;
+        echo '</td>';
+    }
+    echo '</tr>';
+}
+echo '</table>';
+
 echo '</body></html>';

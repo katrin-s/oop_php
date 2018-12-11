@@ -11,7 +11,7 @@ echo '<!doctype html><html><head><title>Tsüklid</title>
 // tsüklid
 // for
 /*
- for($juhtimisM=algvaartus; $juhtimisM < lõppväärtus; $juhtimisM++){
+ for($juhtimisM=algväärtus; $juhtimisM < lõppväärtus; $juhtimisM++){
     tegevused, mis toimuvad nii kaua, kui $juhtimisM < lõppväärtus kehtib
 }
  */
