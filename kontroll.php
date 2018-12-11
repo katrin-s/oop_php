@@ -6,9 +6,28 @@
  * Time: 9:22
  */
 
+echo '<html><head><title>Ülesanded</title></head><body>';
+// Ülesanne 1
+/* Loo programm, mille sees:
+a) defineeritud muutujate abil
+    Sinu ees- ja perenimi
+    kursuse tähis
+    kursuse number
+    Sinu kooli email
+b) Väljastatud muutujate väärtused koos sobiva tekstiga html faili kujul
+*/
+echo '<h4>Ülesanne 1</h4>';
+$nimi = 'Katrin Sooäär';
+$kursuseTahis = 'KD';
+$kursuseNumber = 18;
+$kooliEmail = 'katrinsooaar@khk.ee';
+echo 'Nimi: '.$nimi.'<br>';
+echo 'Kursus: '.$kursuseTahis.''.$kursuseNumber.'<br>';
+echo 'Email: '.$kooliEmail.'<br>';
+echo '<hr>';
 // Ülesanne 2
 /* Loo muutuja nimega varv, mille algväärtuseks pane 'punane';
-Koosta if-else if- else lause, mis väljastab teksti "Värviline tekst"
+Koosta if-else if-else lause, mis väljastab teksti "Värviline tekst"
 vastavalt määratud väärtusega. Katseta vähemalt kolme HTML värviga -
 red, blue, orange - vastavalt tingimuslauses määra punane, sinine ja orange
 */
@@ -25,10 +44,4 @@ if($varv == 'punane'){
     echo 'black';
 }
 echo ';">Värviline tekst</p>';
-echo '
-        </body>
-    </html>
-';
-
-
-?>
+echo '</body></html>';
