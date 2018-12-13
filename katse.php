@@ -11,18 +11,38 @@
 $massiiv = array(); //tühi massiiv
 $massiiv[] = väärtus;
  */
+// massiivi loomine
 $numbrid = array(
     array(1,2,3),
     array(4,5,6),
-    array(7,8,9),
 );
+// massiivi sisu test
 var_dump($numbrid);
 echo '<pre>';
 print_r($numbrid);
 echo '</pre>';
-
+// massiivi elemendi väljastamine
 echo $numbrid[1][1];
+echo '<br>';
+// massiivi suuruse kontroll - hetkel ridade arv
+$ridadeArv = count($numbrid);
+echo $ridadeArv;
+echo '<br>';
+// veergude arvu näitamine
+$veergudeArv = count($numbrid[0]);
+echo $veergudeArv;
+echo '<br>';
+echo '<br>';
 
+// massiivi väljastamine
+for ($reaNumber = 0; $reaNumber < $ridadeArv; $reaNumber++) {
+    for ($veeruNumber = 0; $veeruNumber < $veergudeArv; $veeruNumber++) {
+        echo $numbrid[$reaNumber][$veeruNumber].'&nbsp;';
+    }
+    echo '<br>';
+}
+
+echo '<br>';
 
 function htmlTabel($ridadeArv = 0, $veergudeArv = 0){
      $tabel = '<table>';
