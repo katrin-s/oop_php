@@ -86,5 +86,27 @@ echo '<hr>';
 // Ülesanne 4
 
 echo '<h4>Ülesanne 4</h4>';
+/* Muuda htmlTabel() funktsioon nii, et see võtaks parameetrina numbrite massiivi
+ja väljastaks HTML tabelina
+*/
+function htmlTabel($massiiv){
+    echo '<table>';
+    foreach($massiiv as $rida){
+        echo '<tr>';
+        foreach($rida as $element) {
+            echo '<td>';
+            echo $element;
+            echo '</td>';
+        }
+        echo '</tr>';
+    }
+    echo '</table>';
+}
+$numbrid = array(
+    array(1, 2, 3),
+    array(4, 5, 6)
+);
+htmlTabel($numbrid);
+echo '<br>';
 
 echo '</body></html>';
