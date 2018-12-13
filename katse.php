@@ -11,13 +11,17 @@
 $massiiv = array(); //tühi massiiv
 $massiiv[] = väärtus;
  */
-$nimed = array();
-$nimed[] = 'Katrin';
-$nimed[] = 'Mari';
+$numbrid = array(
+    array(1,2,3),
+    array(4,5,6),
+    array(7,8,9),
+);
+var_dump($numbrid);
 echo '<pre>';
-print_r ($nimed);
+print_r($numbrid);
 echo '</pre>';
 
+echo $numbrid[1][1];
 
 
 function htmlTabel($ridadeArv = 0, $veergudeArv = 0){
