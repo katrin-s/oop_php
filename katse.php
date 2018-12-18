@@ -32,6 +32,14 @@ function valjastaInfo($massiiv) {
         echo '<hr>';
     }
 }
+
+function suguVordlus($porsas1, $porsas2){
+    if ($porsas1['sugu'] == $porsas2['sugu']) {
+        return 0; }
+    return ($porsas1['sugu'] < $porsas2['sugu']) ? -1 : 1;
+}
+
+
 $perekondPeppa = array(
     'Peppa' => array(
         'nimi' => 'Peppa',
@@ -45,25 +53,34 @@ $perekondPeppa = array(
         'vanus' => 3,
         'sugu' => 'mees'),
 
-    'Isapõrsas' => array(
+    'Põrsas Isa' => array(
         'nimi' => 'Isa',
-        'amet' => 'isa',
+        'amet' => 'põrsasisa',
         'vanus' => 40,
         'sugu' => 'mees'),
 
-    'Emapõrsas' => array(
+    'Põrsas Ema' => array(
         'nimi' => 'Ema',
-        'amet' => 'ema',
+        'amet' => 'põrsasema',
         'vanus' => 35,
         'sugu' => 'naine'),
 
 );
+
+//massiivi sorteerimine
+// tähestiku järjekorras ilma nimeta
+// sort($perekondPeppa);
+// tähestiku järjekorras nimega
+// asort($perekondPeppa);
+// võtmete tähestiku järjekorras
+// ksort($perekondPeppa);
+uasort($perekondPeppa, 'suguVordlus');
+
 
 
 // lehe sisu väljastamine
 echo '<!doctype html><html><head><title>Funktsioonid</title>
 <link rel="stylesheet" type="text/css" href="katsestyle.css"></head><body>';
 valjastaInfo($perekondPeppa);
-echo '<br>';
 echo '</body></html>';
 ?>
