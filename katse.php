@@ -1,86 +1,24 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: katrin.sooaar
- * Date: 06.12.2018
- * Time: 11:08
- */
-// massiivid
-// array()
-/*
-$massiiv = array(); //tühi massiiv
-$massiiv[] = väärtus;
- */
-// massiivi loomine
-
-function suguVarv($sugu) {
-    if ($sugu == 'naine') {
-        echo '<div style="color: red">';
-    } else {
-        echo '<div style="color: blue">';
-    }
+function vorm(){
+    echo '<form method="post" action="'.$_SERVER['PHP_SELF'].'">
+        <div>
+            <label>kasutajanimi :</label>
+            <input type="text" name="username">
+        </div>
+        <input type="submit" value="Saada!">
+    </form>';
 }
-
-function valjastaInfo($massiiv) {
-    foreach ($massiiv as $alammassiivNimi => $alammassiivAndmed){
-        suguVarv($alammassiivAndmed['sugu']);
-        echo '<h4>'.$alammassiivNimi.'</h4>';
-        foreach ($alammassiivAndmed as $elemendiNimi => $elemendiVaartus){
-            suguVarv($alammassiivAndmed['sugu']);
-            echo $elemendiNimi.' - '.$elemendiVaartus.'</div>';
+if(empty($_POST)){
+    vorm();
+} else {
+    foreach ($_POST as $element){
+        if(empty($element)){
+            echo 'Andmed tuleb sisestada ka!<br>';
+            echo '<a href="'.$_SERVER['PHP_SELF'].'">Proovi uuesti!</a>';
+            exit;
         }
-        echo '<hr>';
     }
+    echo 'kasutajanimi = ' . $_POST['username'] . '<br>';
+    echo 'Tere tulemast ' . $_POST['username'] . '!<br>';
 }
-
-function suguVordlus($porsas1, $porsas2){
-    if ($porsas1['sugu'] == $porsas2['sugu']) {
-        return 0; }
-    return ($porsas1['sugu'] < $porsas2['sugu']) ? -1 : 1;
-}
-
-
-$perekondPeppa = array(
-    'Peppa' => array(
-        'nimi' => 'Peppa',
-        'amet' => 'põrsaslaps',
-        'vanus' => 5,
-        'sugu' => 'naine'),
-
-    'George' => array(
-        'nimi' => 'George',
-        'amet' => 'põrsaslaps',
-        'vanus' => 3,
-        'sugu' => 'mees'),
-
-    'Põrsas Isa' => array(
-        'nimi' => 'Isa',
-        'amet' => 'põrsasisa',
-        'vanus' => 40,
-        'sugu' => 'mees'),
-
-    'Põrsas Ema' => array(
-        'nimi' => 'Ema',
-        'amet' => 'põrsasema',
-        'vanus' => 35,
-        'sugu' => 'naine'),
-
-);
-
-//massiivi sorteerimine
-// tähestiku järjekorras ilma nimeta
-// sort($perekondPeppa);
-// tähestiku järjekorras nimega
-// asort($perekondPeppa);
-// võtmete tähestiku järjekorras
-// ksort($perekondPeppa);
-uasort($perekondPeppa, 'suguVordlus');
-
-
-
-// lehe sisu väljastamine
-echo '<!doctype html><html><head><title>Funktsioonid</title>
-<link rel="stylesheet" type="text/css" href="katsestyle.css"></head><body>';
-valjastaInfo($perekondPeppa);
-echo '</body></html>';
 ?>
