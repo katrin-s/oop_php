@@ -13,11 +13,21 @@ $massiiv[] = väärtus;
  */
 // massiivi loomine
 
+function suguVarv($sugu) {
+    if ($sugu == 'naine') {
+        echo '<div style="color: red">';
+    } else {
+        echo '<div style="color: blue">';
+    }
+}
+
 function valjastaInfo($massiiv) {
     foreach ($massiiv as $alammassiivNimi => $alammassiivAndmed){
-        echo '<h5>'.$alammassiivNimi.'</h5><br>';
+        suguVarv($alammassiivAndmed['sugu']);
+        echo '<h4>'.$alammassiivNimi.'</h4>';
         foreach ($alammassiivAndmed as $elemendiNimi => $elemendiVaartus){
-            echo $elemendiNimi.' - '.$elemendiVaartus.'<br>';
+            suguVarv($alammassiivAndmed['sugu']);
+            echo $elemendiNimi.' - '.$elemendiVaartus.'</div>';
         }
         echo '<hr>';
     }
@@ -34,6 +44,19 @@ $perekondPeppa = array(
         'amet' => 'põrsaslaps',
         'vanus' => 3,
         'sugu' => 'mees'),
+
+    'Isapõrsas' => array(
+        'nimi' => 'Isa',
+        'amet' => 'isa',
+        'vanus' => 40,
+        'sugu' => 'mees'),
+
+    'Emapõrsas' => array(
+        'nimi' => 'Ema',
+        'amet' => 'ema',
+        'vanus' => 35,
+        'sugu' => 'naine'),
+
 );
 
 
