@@ -107,6 +107,10 @@ $numbrid = array(
     array(4, 5, 6)
 );
 htmlTabel($numbrid);
-echo '<br>';
+echo '<hr>';
+// Ülesanne 5
+// Kalkulaatori loomine vormide abil
+echo '<h4>Ülesanne 5</h4>';
+
 
 echo '</body></html>';
