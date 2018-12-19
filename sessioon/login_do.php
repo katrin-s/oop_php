@@ -11,4 +11,12 @@ else if (empty($_POST['username'])) {
 else if (empty($_POST['pass'])) {
     header('Location: login.php');
     $_SESSION['viga'] = 'Sisesta parool!';
+} else {
+    //kontrollin sessiooni IDd
+    echo session_id();
+    echo '<br>';
+    // sessiooni töö pikkus on vaikimisi 30 minutit
+    echo '<pre>';
+    print_r($_SESSION);
+    echo '</pre>';
 }

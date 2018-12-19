@@ -1,6 +1,8 @@
 <?php
 session_start(); //alustame anonüümse sessiooniga
 // lisatud veateate väljastamise võimalus
+echo session_id();
+echo '<br>';
 echo '<div style="color: red">'.$_SESSION['viga'].'</div>'
 ?>
 <form method="post" action="login_do.php">
